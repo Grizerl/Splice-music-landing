@@ -1,10 +1,3 @@
-'use strict';
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Smooth scroll to position 5000 on page load
-    window.scrollTo(0, 5000);
-
-    // Smooth scroll for anchor links
     const anchors = document.querySelectorAll('a[href*="#"]');
     for (let anchor of anchors) {
         anchor.addEventListener("click", function(event) {
@@ -21,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
-});
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const preload = document.querySelector("[data-preload]");

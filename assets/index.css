@@ -11,6 +11,10 @@
     --font-family-roboto:'Roboto', sans-serif;
     --font-family-josefin:'Josefin Sans", sans-serif;'
 }
+html
+{
+    scroll-behavior: smooth;
+}
 .preload {
     position: fixed;
     top: 0;
@@ -316,7 +320,9 @@ a,.nav-link
     height: 453px;
     border-radius: 8px;
     background: var(--clr-white);
+    
 }
+
 .card-top-1, .card-top-2, .card-top-3
 {
     text-align: center;
