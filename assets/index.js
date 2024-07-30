@@ -1,3 +1,5 @@
+'use strict';
+
 document.addEventListener("DOMContentLoaded", function() {
     // Smooth scroll to position 5000 on page load
     window.scrollTo(0, 5000);
@@ -19,4 +21,12 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const preload = document.querySelector("[data-preload]");
+    setTimeout(()=>{
+         preload.classList.add("loaded");
+    },400)
+   
 });
