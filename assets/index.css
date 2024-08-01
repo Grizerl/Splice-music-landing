@@ -201,8 +201,10 @@ a,.nav-link
     background-position: center;
     height: 87vh;
     color: var(--clr-white);
+    position: relative;
     font-family: var(--font-family-roboto);
 }
+
 .baner-container
 {
     padding: 6rem 0px 0px 10rem;
@@ -279,6 +281,21 @@ a,.nav-link
     flex-direction: column;
     position: relative;
     top: 16vh;
+}
+.arrow {
+    animation-duration: 2s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes slidein {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(10px);
+    }
 }
 .scroll-text
 {
@@ -775,6 +792,9 @@ a,.nav-link
     .footer-bottom-content {
         display: none;
     }
+    .section-sc-stores {
+        background: url(./Human.png) no-repeat center / 100% 70%;
+    }
 }
 @media screen and (max-width: 600px)
 {
@@ -783,6 +803,9 @@ a,.nav-link
     }
     .section-sc-stores-slogan {
         font-size: 2rem;
+    }
+    .section-sc-stores {
+        background: url(./Human.png) no-repeat center / 100% 60%;
     }
 }
 @media screen and (max-width: 440px){
@@ -815,5 +838,7 @@ a,.nav-link
 .baner-container {
     padding: 0rem 0px 0px 0rem;
 }
-
+.section-sc-stores {
+    background: url(./Human.png) no-repeat center / 100% 50%;
+}
 }
