@@ -23,3 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
     },400)
    
 });
+
+    document.addEventListener("DOMContentLoaded",()=>{
+        document.getElementById('burger').addEventListener('click', function() {
+        document.querySelector('.nav-bar-collapse').classList.toggle('show');
+        
+    });
+    })
+    
+
+

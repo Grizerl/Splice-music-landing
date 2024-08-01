@@ -111,6 +111,12 @@ a,.nav-link
     justify-content: space-evenly;
     margin: 10px 0px;
 }
+.nav-bar-collapse
+{
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
 .media
 {
     width: 50%;
@@ -123,6 +129,50 @@ a,.nav-link
     align-items: center;
     justify-content: center;
     margin-left: 7rem;
+    margin-right: 6rem;
+}
+.header-btn-burger
+{
+    position: relative;
+    display: none;
+    width: 30px;
+    height: 30px;
+    border: none;
+    z-index: 1;
+    background: none;
+    
+}
+.header-btn-burger span{
+    position: absolute;
+    width: 25px;
+    height: 4px;
+    border-radius: 10px;
+    background-color:#fff;
+    left: 5px;
+    transition: var(--transition-default)
+}
+.header-btn-burger span:nth-child(1) {
+    transform: translateY(-10px);
+}
+
+.header-btn-burger span:nth-child(3) {
+    transform: translateY(10px);
+}
+
+.header-btn-burger.show span {
+    background-color: #fff;
+}
+
+.header-btn-burger.show span:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+}
+
+.header-btn-burger.show span:nth-child(2) {
+    opacity: 0;
+}
+
+.header-btn-burger.show span:nth-child(3) {
+    transform: translateY(0) rotate(-45deg);
 }
 .main-logo
 {
@@ -260,12 +310,20 @@ a,.nav-link
     text-transform: uppercase;
     color: var(--clr-gray);
 }
+.section-container-span
+{
+    text-align: end;
+}
 .section-container-slogan
 {
     font-size: 2.3rem;
     font-weight: 400;
     line-height: 36px;
     text-align: left;   
+}
+.sc-slogan
+{
+    text-align: end;
 }
 .section-container-text
 {
@@ -275,6 +333,12 @@ a,.nav-link
     text-align: left;
     line-break: strict;
     max-width: 45vh;   
+}
+.sc-p
+{
+    text-align: end; 
+    max-width: 54vh; 
+    line-height: 30px;
 }
 .section-container-btn
 {
@@ -291,6 +355,10 @@ a,.nav-link
     border: none;
     cursor: pointer;
     transition: var(--transition-default);
+}
+.sc-btn
+{
+    text-align: end;
 }
 .section-container-btn:hover {
     background: #003CC5;
@@ -458,4 +526,294 @@ a,.nav-link
 {
     padding: 10vh 2.5vh;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1400px) {
+    .header-btn-burger {
+        display: block;
+        cursor: pointer;
+        position: fixed;
+        top: 4px;
+        right: 20px;
+        z-index: 1001;
+    }
+
+    .header-btn-burger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-bar-collapse {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        right: 0;
+        top: 0;
+        width: 300px;
+        height: 100%;
+        background-color: var(--clr-black);
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 60px 20px 20px; /* Adjusted bottom padding */
+        transform: translateX(100%);
+        transition: var(--transition-default);
+        z-index: 1001;
+    }
+
+    .nav-content,
+    .connect-list {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        bottom: 12vh;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 4vh;
+        margin: 0px;
+        padding: 25px 0px;
+    }
+
+    .nav-item {
+        width: 160%;
+        border-bottom: 1px solid var(--clr-gray-light);
+        margin-bottom: 10px;
+    }
+
+    .nav-link {
+        color: var(--clr-white);
+    }
+
+    .nav-item-media-pole {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: -webkit-center;
+        margin: 7px;
+    }
+
+    .nav-bar-collapse.show {
+        transform: translateX(0);
+    }
+
+    .baner-content {
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+        background: url(./Baner.png) no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        color: var(--clr-white);
+        font-family: var(--font-family-roboto);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .baner-container {
+        padding: 9rem 0px 0px 0rem;
+    }
+    .footer-bottom-content-text-title {
+        margin: 0vh 5vh 0px 9vh;
+    }
+    .section-card-title {
+        margin-left: 8vh;
+    }
+    .footer-container
+    {
+        display: grid;
+        text-align: center;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 10px;
+        margin: 15px 0px 0px 100px;
+    }
+    .card-1, .card-2, .card-3 {
+        width: 300px;
+        height: 453px;
+    }
+    .card-text
+    {
+        font-size: 18px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .section-sc-stores {
+        background: url(./Human.png) no-repeat center / 100%;
+    }
+}
+@media screen and (max-width: 1050px)
+{
+    .footer-container
+    {
+        display: grid;
+        text-align: center;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        margin: 0px 0px 0px 30px;
+        
+    }
+    .footer-bottom-content-text-title
+    {
+        margin: 0vh 1vh 0px 1vh;
+    }
+    .card-1, .card-2, .card-3 {
+        width: 250px;
+        height: 453px;
+    }
+    .card-text {
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .card-name {
+        font-size: 15px;
+        margin-left: 20px;
+    }
+    .img-section-popular{
+        width: 80%;
+    }
+    .section-container-slogan {
+        font-size: 1.8rem;
+    
+       
+    }
+    .section-container-text {
+        font-size: 1rem;
+       
+       
+       
+    }
+    .baner-title, .baner-title-aside, .baner-title-aside-second {
+        font-size: 3.8rem;
+    }
+    .section-sc-stores-slogan {
+        font-size: 3rem;
+    }
+
+}
+@media screen and (max-width: 900px)
+{
+    .sc-popular {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    .img-section-popular {
+        width: 85%;
+    }
+    .img-section-popular-media
+    {
+        text-align: center;
+    }
+    .footer-bottom-content {
+        font-size: 14px;
+    }
+    .baner-title, .baner-title-aside, .baner-title-aside-second {
+        font-size: 3.4rem;
+    }
+    .section-container-span,.sc-p,.sc-slogan,.sc-btn,.section-container-slogan,.section-container-text{
+       
+        text-align: center;
+    }
+    .section-container-text {
+       max-width: 1000px;
+        
+    }
+    
+   
+}
+@media screen and (max-width: 780px)
+{
+    .section-sc-stores {
+    margin-top: 0vh;
+    }
+    .footer-container {
+        position: relative;
+        bottom: 15vh;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        margin: 0px 0px 0px 30px;
+    } 
+    .card-list {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+    .section-card-title {
+        margin-left: 8vh;
+        text-align: center;
+        margin-right: 8vh;
+    }   
+    .card-text {
+        font-size: 18px;
+        font-weight: 500;
+        margin-left: 5vh;
+        text-align: center;
+    }
+    .card-1, .card-2, .card-3 {
+        width: 400px;
+        height: 453px;
+        margin-bottom: 15px;
+    }
+    .aside-text {
+    font-family: var(--font-family-roboto);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    margin: 10px 0px;
+    padding: 0px 15px 0px 0px;
+    color: var(--clr-white);
+    }
+    .main-logo {
+        margin-left: 0rem;
+    }
+    .aside-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-bottom-content {
+        display: none;
+    }
+}
+@media screen and (max-width: 600px)
+{
+    .img-section-popular {
+    width: 70%;
+    }
+    .section-sc-stores-slogan {
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 440px){
+.footer-container {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    margin: 0px 0px 0px 30px;
+    text-align: center;
+}
+.card-1, .card-2, .card-3 {
+    width: 300px;
+    height: 453px;
+    margin-bottom: 15px;
+}
+.aside-text {
+    font-family: var(--font-family-roboto);
+    font-size: 14px;
+}
+.baner-title, .baner-title-aside, .baner-title-aside-second {
+    font-size: 3rem;
+}
+.lead-text {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    line-break: strict;
+    max-width: 54vh;
+}
+.baner-container {
+    padding: 0rem 0px 0px 0rem;
+}
+
 }
